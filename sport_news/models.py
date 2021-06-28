@@ -93,6 +93,7 @@ class News(models.Model):
         Users,
         on_delete=models.CASCADE,verbose_name="Автор"
     )
+    header = models.CharField("Заголовок новости",max_length=200,default="null")
     body = models.TextField("Новость")
     dateAdd = models.DateField(auto_now=True, auto_now_add=False, verbose_name="Дата создания")
     PublishedOrNot = models.BooleanField(default=False, verbose_name="Публикация")
@@ -102,7 +103,7 @@ class News(models.Model):
     )
 
     def __str__(self):
-        return self.body
+        return self.header
 
     class Meta:
         verbose_name = "Новость"

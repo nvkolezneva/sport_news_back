@@ -54,8 +54,8 @@ class NewsResource(resources.ModelResource):
 
 class NewsAdmin(ImportExportModelAdmin):
     """Новости"""
-    list_display = ("id", "Author", "body", "dateAdd", "categories", "PublishedOrNot")
-    list_display_links = ("body",)
+    list_display = ("id", "Author", "header","body", "dateAdd", "categories", "PublishedOrNot")
+    list_display_links = ("header",)
     list_filter = ("Author",)
     search_fields = ("Author__name",)
     inlines=[CommentsInline]
